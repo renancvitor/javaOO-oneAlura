@@ -15,7 +15,7 @@ public class Loop {
             mediaAvaliacao += nota;
         }
 
-        System.out.println("Media de avaliações: " + String.format("%.2f", mediaAvaliacao / 3));
+        System.out.println("Media de avaliações: " + String.format("%.2f", mediaAvaliacao / limite));
 
         scanner.close();
     }
