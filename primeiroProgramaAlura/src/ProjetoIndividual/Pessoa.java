@@ -53,4 +53,16 @@ public class Pessoa {
 
         System.out.println(sb.toString());
     }
+
+    public void consultarSaldo() {
+        System.out.println("Saldo atual: R$ " + String.format("%.2f", saldo));
+    }
+
+    public void receberValor(double valor) {
+
+    }
+
+    public void transferirValor(double valor) {
+
+    }
 }
