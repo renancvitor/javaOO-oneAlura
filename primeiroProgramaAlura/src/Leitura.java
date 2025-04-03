@@ -16,5 +16,7 @@ public class Leitura {
         System.out.println("Digite a sua avaliação do filme:");
         double nota = scanner.nextDouble();
         System.out.println(nota);
+
+        scanner.close();
     }
 }
