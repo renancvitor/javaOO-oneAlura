@@ -14,15 +14,17 @@ public class Programa {
         System.out.println("Dados inicias do cliente:");
         System.out.println();
 
-        pessoa.exibitDadosCliente();
+        pessoa.exibirDadosCliente();
         System.out.println("*******************************************");
 
         while (true) {
-            System.out.println("\nOperações:\n");
+            System.out.println("\n-------------------------------------------");
+            System.out.println("Operações:");
             System.out.println("1. Consultar saldo");
             System.out.println("2. Receber valor");
             System.out.println("3. Transferir valor");
             System.out.println("4. Sair");
+            System.out.println("-------------------------------------------");
 
             System.out.println("Digite a operação desejada:");
             int operacao = scanner.nextInt();
@@ -47,7 +49,7 @@ public class Programa {
                     System.exit(0);
                 default:
                     System.out.println("Opção inválida!");
-                    operacao = scanner.nextInt();
+                    break;
             }
         }
     }

@@ -45,7 +45,7 @@ public class Pessoa {
         this.saldo = saldo;
     }
 
-    public void exibitDadosCliente() {
+    public void exibirDadosCliente() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%-15s %s\n", "Nome:", getNome()));
         sb.append(String.format("%-15s %s\n", "Tipo de Conta:", getTipoConta()));
@@ -59,10 +59,20 @@ public class Pessoa {
     }
 
     public void receberValor(double valor) {
-
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("Valor recebido com sucesso! Saldo atual: R$ " + String.format("%.2f", saldo));
+        } else {
+            System.out.println("Valor inválido.");
+        }
     }
 
     public void transferirValor(double valor) {
-
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Transferência realizada! Saldo atual: R$ " + String.format("%.2f", saldo));
+        } else {
+            System.out.println("Saldo insuficiente ou valor inválido. Favor verificar.");
+        }
     }
 }
