@@ -12,8 +12,7 @@ public class Principal {
         meuFilme.avalia(8);
         meuFilme.avalia(10);
         meuFilme.avalia(5);
-        System.out.println(meuFilme.somaAvaliacao);
-        System.out.println(meuFilme.totalAvaliacoes);
-        System.out.printf("%.2f%n", meuFilme.mediaAvaliacoes());
+        System.out.println("Total de avaliações: " + meuFilme.getTotalAvaliacoes());
+        System.out.printf("Média avaliações: " + "%.2f%n", meuFilme.mediaAvaliacoes());
     }
 }
