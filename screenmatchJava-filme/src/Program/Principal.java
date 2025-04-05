@@ -17,5 +17,14 @@ public class Principal {
         System.out.printf("Média avaliações: " + "%.2f%n", meuFilme.mediaAvaliacoes());
 
         System.out.println(meuFilme.toString());
+
+        Serie peakyBlinders = new Serie();
+        peakyBlinders.setNome("Peaky Blinders");
+        peakyBlinders.setAnoLancamento(2020);
+        peakyBlinders.exibeFechaTecnica();
+        peakyBlinders.setTemporadas(6);
+        peakyBlinders.setEpisodiosPorTemporada(10);
+        peakyBlinders.setMinutosPorEpisodio(60);
+        System.out.println("Duração da temporada: " + peakyBlinders.getDuracaoMinutos());
     }
 }
