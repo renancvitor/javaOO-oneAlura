@@ -26,5 +26,17 @@ public class Principal {
         peakyBlinders.setEpisodiosPorTemporada(10);
         peakyBlinders.setMinutosPorEpisodio(60);
         System.out.println("Duração da temporada: " + peakyBlinders.getDuracaoMinutos());
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Outro Filme");
+        outroFilme.setAnoLancamento(2025);
+        outroFilme.setDuracaoMinutos(200);
+
+        Calculadora calc = new Calculadora();
+        calc.incluir(meuFilme);
+        calc.incluir(outroFilme);
+        calc.incluir(peakyBlinders);
+        System.out.println(calc.getTempoTotal());
+
     }
 }
