@@ -38,5 +38,14 @@ public class Principal {
         calc.incluir(peakyBlinders);
         System.out.println(calc.getTempoTotal());
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio ep = new Episodio();
+        ep.setNumero(1);
+        ep.setSerie(peakyBlinders);
+        ep.setTotalVisualizacoes(500);
+        filtro.filtra(ep);
+
     }
 }
