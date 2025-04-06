@@ -4,7 +4,7 @@ public class Audio {
     private String nome;
     private String formato;
     private int duracao;
-    private String anoLancamento;
+    private int anoLancamento;
 
     public String getNome() {
         return nome;
@@ -30,11 +30,21 @@ public class Audio {
         this.duracao = duracao;
     }
 
-    public String getAnoLancamento() {
+    public int getAnoLancamento() {
         return anoLancamento;
     }
 
-    public void setAnoLancamento(String anoLancamento) {
+    public void setAnoLancamento(int anoLancamento) {
         this.anoLancamento = anoLancamento;
+    }
+
+    public void exibeFichaTecnica() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%-15s %s\n", "Nome:", getNome()));
+        sb.append(String.format("%-15s %s\n", "Formato:", getFormato()));
+        sb.append(String.format("%-15s %s\n", "Duração:", getDuracao()));
+        sb.append(String.format("%-15s %s\n", "Ano lançamento:", getAnoLancamento()));
+
+        System.out.println(sb.toString());
     }
 }
