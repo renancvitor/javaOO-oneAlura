@@ -2,6 +2,8 @@ package ProgramDesafio;
 
 public class Main {
     public static void main(String[] args) {
+        FiltroRecomendacaoAudio filtro = new FiltroRecomendacaoAudio();
+
         Musica attack = new Musica();
         attack.setFormato("Música");
         attack.setGenero("Rock");
@@ -12,7 +14,8 @@ public class Main {
         attack.setDuracao(3);
 
         attack.exibeFichaTecnica();
-        System.out.println("Reproduções: " + attack.getReproducoes() + "\n");
+        System.out.println("Reproduções: " + attack.getReproducoes());
+        filtro.filtro(attack);
 
         Podcast podpah = new Podcast();
         podpah.setFormato("Podcast");
@@ -24,6 +27,7 @@ public class Main {
 
         podpah.exibeFichaTecnica();
         System.out.println("Reproduções: " + podpah.getReproducoes());
+        filtro.filtro(podpah);
 
     }
 }
