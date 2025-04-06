@@ -1,8 +1,8 @@
 package ProgramDesafio;
 
-public class Podcast extends Audio {
+public class Podcast extends Audio implements Reproducoes {
     private String locutor;
-    private String convidade;
+    private String convidado;
 
     public String getLocutor() {
         return locutor;
@@ -12,11 +12,17 @@ public class Podcast extends Audio {
         this.locutor = locutor;
     }
 
-    public String getConvidade() {
-        return convidade;
+    public String getConvidado() {
+        return convidado;
     }
 
-    public void setConvidade(String convidade) {
-        this.convidade = convidade;
+    public void setConvidado(String convidado) {
+        this.convidado = convidado;
+    }
+
+    @Override
+    public int getReproducoes() {
+        int reproducoes = 200000;
+        return reproducoes * 200000;
     }
 }

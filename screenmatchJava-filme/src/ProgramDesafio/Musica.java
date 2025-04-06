@@ -1,6 +1,6 @@
 package ProgramDesafio;
 
-public class Musica extends Audio {
+public class Musica extends Audio implements Reproducoes {
     private String cantor;
     private String genero;
     private String album;
@@ -27,5 +27,11 @@ public class Musica extends Audio {
 
     public void setAlbum(String album) {
         this.album = album;
+    }
+
+    @Override
+    public int getReproducoes() {
+        int reproducoes = 2000000;
+        return reproducoes * 200000;
     }
 }
