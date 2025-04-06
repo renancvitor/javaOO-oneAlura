@@ -32,6 +32,6 @@ public class Musica extends Audio implements Reproducoes {
     @Override
     public int getReproducoes() {
         int reproducoes = 2000000;
-        return reproducoes * 200000;
+        return reproducoes * 20000000;
     }
 }

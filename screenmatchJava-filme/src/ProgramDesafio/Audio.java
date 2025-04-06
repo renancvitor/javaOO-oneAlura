@@ -45,6 +45,6 @@ public class Audio {
         sb.append(String.format("%-15s %s\n", "Duração:", getDuracao()));
         sb.append(String.format("%-15s %s\n", "Ano lançamento:", getAnoLancamento()));
 
-        System.out.println(sb.toString());
+        System.out.printf(sb.toString());
     }
 }
