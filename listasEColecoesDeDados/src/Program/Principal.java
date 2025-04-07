@@ -6,6 +6,8 @@ import modelos.Episodio;
 import modelos.Filme;
 import modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -37,6 +39,7 @@ public class Principal {
         outroFilme.setNome("Outro Filme");
         outroFilme.setAnoLancamento(2025);
         outroFilme.setDuracaoMinutos(200);
+        outroFilme.avalia(8);
 
         Calculadora calc = new Calculadora();
         calc.incluir(meuFilme);
@@ -53,5 +56,18 @@ public class Principal {
         ep.setTotalVisualizacoes(500);
         filtro.filtra(ep);
 
+        Filme filmeRenan = new Filme();
+        filmeRenan.setDuracaoMinutos(200);
+        filmeRenan.setNome("Todo mundo em Pânico 1");
+        filmeRenan.setAnoLancamento(2003);
+        filmeRenan.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeRenan);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(meuFilme);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.getFirst().getNome());
+        System.out.println(listaDeFilmes);
     }
 }
