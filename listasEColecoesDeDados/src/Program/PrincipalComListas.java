@@ -6,6 +6,7 @@ import modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -43,6 +44,9 @@ public class PrincipalComListas {
 
         System.out.println("Lista de títulos ordenados:");
         Collections.sort(lista);
+        System.out.println(lista);
+        lista.sort(Comparator.comparing(Titulo::getNome));
+        System.out.println("Ordenando por nome:");
         System.out.println(lista);
     }
 }
