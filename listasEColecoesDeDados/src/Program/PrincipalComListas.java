@@ -4,9 +4,7 @@ import modelos.Filme;
 import modelos.Serie;
 import modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -19,7 +17,7 @@ public class PrincipalComListas {
         Filme filmeRenan = new Filme("Todo mundo em Pânico 1", 2003);
         filmeRenan.avalia(9);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
         lista.add(filmeRenan);
         lista.add(outroFilme);
         lista.add(meuFilme);
