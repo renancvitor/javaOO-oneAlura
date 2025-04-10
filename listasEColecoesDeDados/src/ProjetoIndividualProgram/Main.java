@@ -23,5 +23,14 @@ public class Main {
             System.out.println(p);
         }
 
+        System.out.println("*******************************************");
+        System.out.println("Sistema de compras online.");
+        System.out.println("*******************************************");
+
+        while (true) {
+            System.out.println("Digite o limite do cartão de crédito:");
+            int limiteCartao = scanner.nextInt();
+        }
+
     }
 }
