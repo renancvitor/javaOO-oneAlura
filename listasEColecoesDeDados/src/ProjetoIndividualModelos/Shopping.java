@@ -17,12 +17,6 @@ public class Shopping {
         return valorProduto;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Produto: " + nomeProdutos +
-//                "  Valor produto: R$ " + String.format("%.2f", valorProduto);
-//    }
-
     @Override
     public String toString() {
         return String.format("%-15s R$ %.2f", nomeProdutos, valorProduto);
