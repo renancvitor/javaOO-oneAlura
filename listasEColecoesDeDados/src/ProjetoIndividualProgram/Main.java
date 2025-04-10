@@ -17,5 +17,11 @@ public class Main {
         produtos.add(new Shopping("Calça Jeans", 89.90));
         produtos.add(new Shopping("Boné", 29.90));
         produtos.add(new Shopping("Mochila",  129.90));
+
+        System.out.printf("%-15s %s\n", "Produto", "Valor");
+        for (Shopping p : produtos) {
+            System.out.println(p);
+        }
+
     }
 }
