@@ -27,9 +27,4 @@ public class CartaoCredito {
             System.out.println("❌ Limite insuficiente para esta compra. Favor verificar!");
         }
     }
-
-    @Override
-    public String toString() {
-        return "R$ " + String.format("%.2f", limiteCartao);
-    }
 }

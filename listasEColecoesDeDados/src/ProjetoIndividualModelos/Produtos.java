@@ -25,9 +25,4 @@ public class Produtos {
     public double getValorProduto() {
         return valorProduto;
     }
-
-    @Override
-    public String toString() {
-        return String.format("%-15s R$ %.2f", nomeProdutos, valorProduto);
-    }
 }
