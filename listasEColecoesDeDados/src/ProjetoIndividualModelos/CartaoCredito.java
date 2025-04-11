@@ -21,8 +21,8 @@ public class CartaoCredito {
     public void comprar(double valor) {
         if (valor > 0 && valor < limiteCartao) {
             limiteCartao -= valor;
-            System.out.println("✅ Compra realizada com sucesso! \uD83D\uDCB3 Limite atual = R$ " +
-                    String.format("%.2f", limiteCartao));
+            System.out.println("✅ Compra realizada com sucesso!");
+            System.out.println("💳 Limite atual = R$ " + String.format("%.2f", limiteCartao));
         } else {
             System.out.println("❌ Limite insuficiente para esta compra. Favor verificar!");
         }

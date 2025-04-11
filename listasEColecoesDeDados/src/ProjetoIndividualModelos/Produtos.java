@@ -1,6 +1,6 @@
 package ProjetoIndividualModelos;
 
-public class Produtos {
+public class Produtos implements Comparable<Produtos> {
     private int id;
     private String nomeProdutos;
     private double valorProduto;
@@ -24,5 +24,10 @@ public class Produtos {
 
     public double getValorProduto() {
         return valorProduto;
+    }
+
+    @Override
+    public int compareTo(Produtos o) {
+        return Double.compare(this.valorProduto, o.valorProduto);
     }
 }
