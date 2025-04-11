@@ -3,6 +3,9 @@ package ProjetoIndividualModelos;
 public class CartaoCredito {
     private double limiteCartao;
 
+    public CartaoCredito() {
+    }
+
     public CartaoCredito(double limiteCartao) {
         this.limiteCartao = limiteCartao;
     }

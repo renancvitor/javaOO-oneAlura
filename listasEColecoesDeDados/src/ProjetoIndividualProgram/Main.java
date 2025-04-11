@@ -1,6 +1,7 @@
 package ProjetoIndividualProgram;
 
-import ProjetoIndividualModelos.Shopping;
+import ProjetoIndividualModelos.CartaoCredito;
+import ProjetoIndividualModelos.Produtos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +11,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<Shopping> produtos = new ArrayList<>();
+        List<Produtos> produtos = new ArrayList<>();
 
-        produtos.add(new Shopping("Camiseta", 49.90));
-        produtos.add(new Shopping("Tênis", 199.90));
-        produtos.add(new Shopping("Calça Jeans", 89.90));
-        produtos.add(new Shopping("Boné", 29.90));
-        produtos.add(new Shopping("Mochila",  129.90));
+        produtos.add(new Produtos("Camiseta", 49.90));
+        produtos.add(new Produtos("Tênis", 199.90));
+        produtos.add(new Produtos("Calça Jeans", 89.90));
+        produtos.add(new Produtos("Boné", 29.90));
+        produtos.add(new Produtos("Mochila",  129.90));
 
 //        System.out.printf("%-15s %s\n", "Produto", "Valor");
 //        for (Shopping p : produtos) {
@@ -28,7 +29,9 @@ public class Main {
         System.out.println("*******************************************");
 
         System.out.println("Digite o limite do cartão de crédito:");
-        int limiteCartao = scanner.nextInt();
+        CartaoCredito cartaoCredito = new CartaoCredito();
+        double limite = scanner.nextDouble();
+        cartaoCredito.setLimiteCartao(limite);
 
         while (true) {
             System.out.println("\nMenu de opções:");
@@ -42,13 +45,13 @@ public class Main {
                 case 1:
                     System.out.printf("%-15s %s\n", "Produto", "Valor");
                     for (int i = 0; i < produtos.size(); i ++) {
-                        Shopping shopping = produtos.get(i);
+                        Produtos shopping = produtos.get(i);
                         System.out.printf("%d - %-15s R$ %.2f\n", i, shopping.getNomeProdutos(),
                                 shopping.getValorProduto());
                     }
                     break;
                 case 2:
-                    
+
             }
 
         }

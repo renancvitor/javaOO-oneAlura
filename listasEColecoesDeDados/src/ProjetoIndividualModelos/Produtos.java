@@ -1,12 +1,21 @@
 package ProjetoIndividualModelos;
 
-public class Shopping {
+public class Produtos {
+    private int id;
     private String nomeProdutos;
     private double valorProduto;
 
-    public Shopping(String nomeProdutos, double valorProduto) {
+    public Produtos(int id) {
+        this.id = id;
+    }
+
+    public Produtos(String nomeProdutos, double valorProduto) {
         this.nomeProdutos = nomeProdutos;
         this.valorProduto = valorProduto;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNomeProdutos() {
