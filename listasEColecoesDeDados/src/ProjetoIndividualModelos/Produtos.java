@@ -5,11 +5,11 @@ public class Produtos {
     private String nomeProdutos;
     private double valorProduto;
 
-    public Produtos(int id) {
-        this.id = id;
+    public Produtos() {
     }
 
-    public Produtos(String nomeProdutos, double valorProduto) {
+    public Produtos(int id, String nomeProdutos, double valorProduto) {
+        this.id = id;
         this.nomeProdutos = nomeProdutos;
         this.valorProduto = valorProduto;
     }
