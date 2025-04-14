@@ -1,7 +1,11 @@
 package modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Tittle")
     private String nome;
+    @SerializedName("Year")
     private int anoLancamento;
     private boolean incluidoNoPlano;
     private double somaAvaliacao;
@@ -66,14 +70,8 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "Filme{" +
-                "nome='" + nome + '\'' +
-                ", anoLancamento=" + anoLancamento +
-                ", incluidoNoPlano=" + incluidoNoPlano +
-                ", somaAvaliacao=" + somaAvaliacao +
-                ", totalAvaliacoes=" + totalAvaliacoes +
-                ", duracaoMinutos=" + duracaoMinutos +
-                '}';
+        return  "nome='" + nome + '\'' +
+                ", anoLancamento=" + anoLancamento;
     }
 
     @Override
