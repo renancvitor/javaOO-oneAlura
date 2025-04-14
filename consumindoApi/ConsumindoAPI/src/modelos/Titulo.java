@@ -3,16 +3,16 @@ package modelos;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Tittle")
+    @SerializedName("Title")
     private String nome;
     @SerializedName("Year")
-    private int anoLancamento;
+    private String anoLancamento;
     private boolean incluidoNoPlano;
     private double somaAvaliacao;
     private int totalAvaliacoes;
     private int duracaoMinutos;
 
-    public Titulo(String nome, int anoLancamento) {
+    public Titulo(String nome, String anoLancamento) {
         this.nome = nome;
         this.anoLancamento = anoLancamento;
     }
@@ -25,11 +25,11 @@ public class Titulo implements Comparable<Titulo> {
         this.nome = nome;
     }
 
-    public int getAnoLancamento() {
+    public String getAnoLancamento() {
         return anoLancamento;
     }
 
-    public void setAnoLancamento(int anoLancamento) {
+    public void setAnoLancamento(String anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
 

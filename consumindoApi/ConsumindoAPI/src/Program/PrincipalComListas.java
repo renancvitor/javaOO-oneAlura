@@ -8,13 +8,13 @@ import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("O Poderoso Chefão", 1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão", "1970");
         meuFilme.avalia(9);
-        Serie peakyBlinders = new Serie("Peaky Blinders", 2020);
+        Serie peakyBlinders = new Serie("Peaky Blinders", "2020");
         peakyBlinders.avalia(10);
-        Filme outroFilme = new Filme("Outro Filme", 2025);
+        Filme outroFilme = new Filme("Outro Filme", "2025");
         outroFilme.avalia(6);
-        Filme filmeRenan = new Filme("Todo mundo em Pânico 1", 2003);
+        Filme filmeRenan = new Filme("Todo mundo em Pânico 1", "2003");
         filmeRenan.avalia(9);
 
         List<Titulo> lista = new LinkedList<>();
