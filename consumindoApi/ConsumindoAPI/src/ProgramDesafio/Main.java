@@ -1,8 +1,7 @@
 package ProgramDesafio;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import utilsDesafio.GsonConfig;
 import entiteDesafio.EnderecoViaCep;
 import exceptionsDesafio.ErroDeConversaoDeCepException;
 import serviceDesafio.ViaCepService;
@@ -14,10 +13,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .setPrettyPrinting()
-                .create();
+        Gson gson = GsonConfig.criarGson();
 
         ViaCepService viaCepService = new ViaCepService();
 
