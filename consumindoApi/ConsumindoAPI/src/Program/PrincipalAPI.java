@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class PrincipalAPI {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Digite um filme para buscar: ");
+        System.out.print("Digite um filme para buscar: ");
         String buscaFilme = sc.nextLine();
 
         String endereco = "http://www.omdbapi.com/?apikey=1653b8ce&t=" + buscaFilme;
@@ -38,7 +38,13 @@ public class PrincipalAPI {
         TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(meuTituloOmdb);
 
-        Titulo meuTitulo = new Titulo(meuTituloOmdb);
-        System.out.println("Meu título já convertido: \n" + meuTitulo);
+        try {
+            Titulo meuTitulo = new Titulo(meuTituloOmdb);
+            System.out.println("Meu título já convertido: \n" + meuTitulo);
+        } catch (NumberFormatException e) {
+            System.out.println("\nErro inesperado: " + e.getMessage());
+        }
+
+        System.out.println("\nO programa finalizou corretamente!");
     }
 }
