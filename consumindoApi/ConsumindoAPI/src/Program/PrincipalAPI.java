@@ -7,6 +7,7 @@ import exceptions.ErroDeConversaoDeAnoException;
 import modelos.Titulo;
 import modelos.TituloOmdb;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -43,6 +44,11 @@ public class PrincipalAPI {
 
             Titulo meuTitulo = new Titulo(meuTituloOmdb);
             System.out.println("Meu título já convertido: \n" + meuTitulo);
+
+            FileWriter fileWriter = new FileWriter("filmes.txt");
+            fileWriter.write(meuTitulo.toString());
+            fileWriter.close();
+            
         } catch (NumberFormatException e) {
             System.out.println("\nErro inesperado: " + e.getMessage());
         } catch (IllegalArgumentException e) {
