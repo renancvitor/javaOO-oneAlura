@@ -1,0 +1,18 @@
+[
+  {
+    "Nome": "Matrix",
+    "AnoLancamento": 1993,
+    "IncluidoNoPlano": false,
+    "SomaAvaliacao": 0.0,
+    "TotalAvaliacoes": 0,
+    "DuracaoMinutos": 60
+  },
+  {
+    "Nome": "Dogville",
+    "AnoLancamento": 2003,
+    "IncluidoNoPlano": false,
+    "SomaAvaliacao": 0.0,
+    "TotalAvaliacoes": 0,
+    "DuracaoMinutos": 17
+  }
+]
