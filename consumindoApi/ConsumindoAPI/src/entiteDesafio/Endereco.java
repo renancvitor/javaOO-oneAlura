@@ -6,6 +6,13 @@ public class Endereco {
     String localidade;
     String uf;
 
+    public Endereco(EnderecoViaCep enderecoViaCep) {
+        this.cep = enderecoViaCep.cep();
+        this.logradouro = enderecoViaCep.logradouro();
+        this.localidade = enderecoViaCep.localidade();
+        this.uf = enderecoViaCep.uf();
+    }
+
     @Override
     public String toString() {
         return "{Cep = " + cep +
