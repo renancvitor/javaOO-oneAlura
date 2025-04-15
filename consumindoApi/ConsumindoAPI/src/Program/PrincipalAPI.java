@@ -35,12 +35,10 @@ public class PrincipalAPI {
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                 .create();
 
-//        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-//        System.out.println(meuTituloOmdb);
-//
-//        Titulo meuTitulo = new Titulo(meuTituloOmdb);
-        // System.out.println(meuTitulo);
-        Titulo meuTitulo = gson.fromJson(json, Titulo.class);
-        System.out.println(meuTitulo);
+        TituloOmdb meuTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+        System.out.println(meuTituloOmdb);
+
+        Titulo meuTitulo = new Titulo(meuTituloOmdb);
+        System.out.println("Meu título já convertido: \n" + meuTitulo);
     }
 }
