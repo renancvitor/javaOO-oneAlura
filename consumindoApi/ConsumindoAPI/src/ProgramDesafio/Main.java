@@ -1,6 +1,7 @@
 package ProgramDesafio;
 
 import com.google.gson.Gson;
+import entiteDesafio.Endereco;
 import utilsDesafio.GsonConfig;
 import entiteDesafio.EnderecoViaCep;
 import exceptionsDesafio.ErroDeConversaoDeCepException;
@@ -17,16 +18,18 @@ public class Main {
 
         ViaCepService viaCepService = new ViaCepService();
 
-        System.out.println("Digite o CEP que deseja buscar(somente números): ");
+        System.out.print("\nDigite o CEP que deseja buscar(somente números):  ");
         String cep = sc.nextLine();
 
         try {
             String json = viaCepService.buscarEndereco(cep);
-            System.out.println("Resposta da API: " + json);
+//            System.out.println("Resposta da API: " + json);
 
             EnderecoViaCep enderecoViaCep = gson.fromJson(json, EnderecoViaCep.class);
 
-            System.out.println("Endereço Encontrado: " + enderecoViaCep);
+            Endereco endereco = new Endereco(enderecoViaCep);
+
+            System.out.println("Endereço Encontrado: " + endereco);
         } catch (ErroDeConversaoDeCepException e) {
             System.out.println("Erro de conversão do CEP: " + e.getMensagem());
         } catch (IOException | InterruptedException e) {
