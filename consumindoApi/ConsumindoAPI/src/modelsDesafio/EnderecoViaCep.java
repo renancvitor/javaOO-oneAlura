@@ -1,4 +1,4 @@
-package entiteDesafio;
+package modelsDesafio;
 
 public record EnderecoViaCep(
         String cep,

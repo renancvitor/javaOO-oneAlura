@@ -1,4 +1,4 @@
-package entiteDesafio;
+package modelsDesafio;
 
 public class Endereco {
     String cep;

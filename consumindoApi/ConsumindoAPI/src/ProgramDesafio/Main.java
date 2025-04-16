@@ -1,11 +1,11 @@
 package ProgramDesafio;
 
 import com.google.gson.Gson;
-import entiteDesafio.Endereco;
+import controllerDesafio.EnderecoController;
+import modelsDesafio.Endereco;
 import utilsDesafio.GsonConfig;
-import entiteDesafio.EnderecoViaCep;
-import exceptionsDesafio.ErroDeConversaoDeCepException;
 import serviceDesafio.ViaCepService;
+import utilsDesafio.JsonWriter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,10 +16,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String cep = "";
+
         Gson gson = GsonConfig.criarGson();
-
-        ViaCepService viaCepService = new ViaCepService();
-
+        EnderecoController controller = new EnderecoController(new ViaCepService(), gson);
         List<Endereco> enderecos = new ArrayList<>();
 
         while (!cep.equalsIgnoreCase("sair")) {
@@ -31,27 +30,21 @@ public class Main {
             }
 
             try {
-                String json = viaCepService.buscarEndereco(cep);
-//            System.out.println("Resposta da API: " + json);
-
-                EnderecoViaCep enderecoViaCep = gson.fromJson(json, EnderecoViaCep.class);
-
-                Endereco endereco = new Endereco(enderecoViaCep);
-
+                Endereco endereco = controller.buscarEnderecoPorCep(cep);
                 System.out.println("Endereço Encontrado: " + endereco);
-
                 enderecos.add(endereco);
-
-            } catch (ErroDeConversaoDeCepException e) {
-                System.out.println("Erro de conversão do CEP: " + e.getMensagem());
-            } catch (IOException | InterruptedException e) {
-                System.out.println("Erro ao buscar o endereço: " + e.getMessage());
             } catch (Exception e) {
                 System.out.println("Erro inesperado: " + e.getMessage());
             }
         }
-        System.out.println(enderecos);
+        try {
+            JsonWriter.salvarComoJson(enderecos, "enderecos.json", gson);
+            System.out.println("\nArquivo 'enderecos.json' salvo com sucesso!");
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar arquivo: " + e.getMessage());
+        }
 
+        System.out.println("\nO programa finalizou corretamente!");
         sc.close();
     }
 }
